@@ -1,0 +1,14 @@
+{
+  "name": "poller",
+  "version": "1.0.0",
+  "description": "Everthing polls and votes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js test"
+  },
+  "author": "Gateway3",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^13.1.0"
+  }
+}
