@@ -9,60 +9,16 @@
             "required": true
         },
         {
-            "name": "type",
-            "description": "Type of poll to initiate.",
-            "type": 3,
-            "required": false,
-            "choices": [
-                {
-                    "name": "Standard: First Past The Post",
-                    "value": "standard"
-                },
-                {
-                    "name": "Reverse: Downvote First Past the Post",
-                    "value": "reverse"
-                },
-                {
-                    "name": "Ranked: Order Choice Preference",
-                    "value": "ranked"
-                }
-            ]
-        },
-        {
-            "name": "time_limit",
-            "description": "MM:HH (0-59):(0-24) Default to 10m.",
-            "type": 3,
-            "required": false
-        },
-        {
-            "name": "real_time_results",
-            "description": "Show results in real time.",
-            "type": 5,
-            "required": false
-        },
-        {
-            "name": "multiple_votes",
-            "description": "Allow votes for multiple options.",
-            "type": 5,
-            "required": false
-        },
-        {
-            "name": "role",
-            "description": "Limit who can vote to a specific role and higher.",
-            "type": 8,
-            "required": false
-        },
-        {
             "name": "option_1",
             "description": "First Option",
             "type": 3,
-            "required": false
+            "required": true
         },
         {
             "name": "option_2",
             "description": "Second Option",
             "type": 3,
-            "required": false
+            "required": true
         },
         {
             "name": "option_3",

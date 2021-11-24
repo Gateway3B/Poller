@@ -1,0 +1,56 @@
+{
+    "name": "pollsettings",
+    "description": "Set settings for polls. If no parameters are passed, returns current settings.",
+    "options": [
+        {
+            "name": "type",
+            "description": "Type of poll.",
+            "type": 3,
+            "required": false,
+            "choices": [
+                {
+                    "name": "Standard: First Past The Post",
+                    "value": "standard"
+                },
+                {
+                    "name": "Reverse: Downvote First Past the Post",
+                    "value": "reverse"
+                },
+                {
+                    "name": "Ranked: Order Choice Preference",
+                    "value": "ranked"
+                }
+            ]
+        },
+        {
+            "name": "time_limit_hours",
+            "description": "0-24",
+            "type": 4,
+            "required": false
+        },
+        {
+            "name": "time_limit_minutes",
+            "description": "0-59",
+            "type": 4,
+            "required": false
+        },
+        {
+            "name": "real_time_results",
+            "description": "Show results in real time.",
+            "type": 5,
+            "required": false
+        },
+        {
+            "name": "multiple_votes",
+            "description": "Allow votes for multiple options.",
+            "type": 5,
+            "required": false
+        },
+        {
+            "name": "role",
+            "description": "Limit who can vote to a specific role and higher.",
+            "type": 8,
+            "required": false
+        }
+    ]
+}

@@ -30,6 +30,8 @@ function deleteCommands(client, directory) {
         
         if(process.argv.slice(2)[0] === 'test') {
             client.guilds.cache.get(testGuildId)?.commands.delete(commandJSON);
+        } else {
+            // client.application?.commands.delete(commandJSON);
         }
     }
 }
