@@ -4,7 +4,8 @@
   "description": "Everthing polls and votes.",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js --test"
+    "test": "node src/index.js test",
+    "start": "node src/index.js"
   },
   "author": "Gateway3",
   "license": "ISC",

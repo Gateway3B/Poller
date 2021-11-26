@@ -1,5 +1,4 @@
 const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");
-const { polls, client } = require('../index.js');
 const crypto = require('crypto');
 
 module.exports = {

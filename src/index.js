@@ -2,7 +2,7 @@ const { Client, Intents, Collection } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 client.commands = new Collection();
 
-const { discordBotToken, ATLASUSER, ATLASPASS } = require('./config.json');
+const { discordBotToken, ATLASUSER, ATLASPASS } = require('../config.json');
 const commandFunctions = require('./Helpers/CommandFunctions');
 
 const mongoose = require('mongoose');

@@ -1,9 +1,9 @@
 const fs = require('fs');
-const { testGuildId } = require('../config.json');
+const {testGuildId} = require('../../config.json');
 
 function registerCommands(client, directory) {
     // Get command json files.
-    const commandJSONFiles = fs.readdirSync(`./${directory}`).filter(file => file.endsWith('.json'));
+    const commandJSONFiles = fs.readdirSync(`./src/${directory}`).filter(file => file.endsWith('.json'));
 
     // For each JSON set a command using it.
     for(const file of commandJSONFiles) {
@@ -19,26 +19,31 @@ function registerCommands(client, directory) {
     }
 }
 
-function deleteCommands(client, directory) {
-    // Get command json files.
-    const commandJSONFiles = fs.readdirSync(`./${directory}`).filter(file => file.endsWith('.json'));
+async function deleteCommands(client) {
+    if(process.argv.slice(2)[0] === 'test') {
+        const guild = client.guilds.cache.get(testGuildId);
 
-    // For each JSON delete a command using it.
-    for(const file of commandJSONFiles) {
+        const promises = [];
+        guild.commands.cache.forEach(command => {
+            promises.push(guild.commands.delete(command.id));
+        });
 
-        const commandJSON = require(`../${directory}/${file}`);
-        
-        if(process.argv.slice(2)[0] === 'test') {
-            client.guilds.cache.get(testGuildId)?.commands.delete(commandJSON);
-        } else {
-            // client.application?.commands.delete(commandJSON);
-        }
+        await Promise.all(promises);
+    } else {
+        // const application = client.application;
+
+        // const promises = [];
+        // application.commands.cache.forEach(command => {
+        //     promises.push(application.commands.delete(commandJSON));
+        // });
+
+        // await Promise.all(promises);
     }
 }
 
 function fetchCommands(client, directory) {
     // Get command files.
-    const commandFiles = fs.readdirSync(`./${directory}`).filter(file => file.endsWith('.js'));
+    const commandFiles = fs.readdirSync(`./src/${directory}`).filter(file => file.endsWith('.js'));
 
     // For each command file, register it with the discord client.
     for(const file of commandFiles) {

@@ -1,5 +1,5 @@
 const { MessageEmbed, MessageActionRow, MessageButton, MessageAttachment, SnowflakeUtil, MessageFile } = require('discord.js');
-const {PrimaryColor} = require('../config.json');
+const {PrimaryColor} = require('../../config.json');
 const crypto = require('crypto');
 const vega = require('vega');
 const sharp = require('sharp');
