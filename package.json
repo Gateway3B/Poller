@@ -4,8 +4,11 @@
   "description": "Everthing polls and votes.",
   "main": "index.js",
   "scripts": {
-    "test": "node src/index.js test",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "create": "node src/helpers/CommandFunctions.js create",
+    "createTest": "node src/helpers/CommandFunctions.js create test",
+    "delete": "node src/helpers/CommandFunctions.js delete",
+    "deleteTest": "node src/helpers/CommandFunctions.js delete test"
   },
   "author": "Gateway3",
   "license": "ISC",

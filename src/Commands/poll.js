@@ -141,7 +141,11 @@ function createButtonHandler(poll)
 
         const multiVote = poll.guildSettings.multiple_votes || poll.guildSettings.type === 'ranked';
 
-        if(!poll.voters.has(i.user.id))
+        if(i.member.roles.highest.position < poll.interaction.guild.roles.cache.get(poll.guildSettings.role).position)
+        {
+            embed.setTitle('Your Role Is Not High Enough To Vote In This Poll');
+        }
+        else if(!poll.voters.has(i.user.id))
         {
             const voter = {counter: multiVote?0:voteNumber, votes: new Array(poll.numOptions).fill(null).map((value, index) => ({index: index, order: 0, state: false}))};
             voter.votes[voteNumber].state = true;
@@ -429,7 +433,7 @@ function keycapEmojiMap(number)
 
 function makeQuestion(title)
 {
-    if(title.charAt(title.length) != '?')
+    if(title.charAt(title.length - 1) != '?')
         return `${title}?`
     return title
 }

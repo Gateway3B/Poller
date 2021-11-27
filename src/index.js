@@ -30,7 +30,6 @@ client.once('ready', async() => {
     conn = mongoose.connection;
     conn.on('error', console.error.bind(console, 'connection error:'));
 
-    commandFunctions.registerCommands(client, 'CommandJSONs');
     commandFunctions.fetchCommands(client, 'Commands');
 
     conn.collection('SETTINGS');
@@ -82,7 +81,6 @@ client.login(discordBotToken);
 
 process.on('SIGINT', async () => {
     console.log('Bot Shutdown');
-    commandFunctions.deleteCommands(client, 'CommandJSONs');
     await client.destroy();
     process.exit(1);
 });
