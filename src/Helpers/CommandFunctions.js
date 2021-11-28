@@ -57,18 +57,18 @@ function fetchCommands(client, directory) {
     }
 }
 
-module.exports = { registerCommands, deleteCommands, fetchCommands }
-
-client.once('ready', async() => {
+async function createDelete(client)
+{
     if(process.argv.slice(2)[0] === 'create')
     {
         registerCommands(client, 'CommandJSONs');
+        process.exit();
     }
     if(process.argv.slice(2)[0] === 'delete')
     {
         await deleteCommands(client, 'CommandJSONs');
+        process.exit();
     }
-    process.exit();
-});
+}
 
-client.login(discordBotToken);
+module.exports = { fetchCommands, createDelete }

@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
-    "create": "node src/helpers/CommandFunctions.js create",
-    "createTest": "node src/helpers/CommandFunctions.js create test",
-    "delete": "node src/helpers/CommandFunctions.js delete",
-    "deleteTest": "node src/helpers/CommandFunctions.js delete test"
+    "create": "node src/index.js create",
+    "createTest": "node src/index.js create test",
+    "delete": "node src/index.js delete",
+    "deleteTest": "node src/index.js delete test"
   },
   "author": "Gateway3",
   "license": "ISC",
